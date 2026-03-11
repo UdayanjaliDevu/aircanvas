@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project implements a **computer vision based virtual drawing application** that allows users to draw on a canvas using **hand gestures detected from a webcam**.
+This project implements a **computer vision-based virtual drawing application** that allows users to draw on a canvas using **hand gestures detected from a webcam**.
 
 The system uses **MediaPipe hand tracking** to detect finger landmarks and interpret gestures for drawing, selecting colors, and erasing. The goal of this project is to demonstrate **real-time gesture-based interaction using computer vision techniques**.
 
@@ -19,15 +19,9 @@ The system uses **MediaPipe hand tracking** to detect finger landmarks and inter
 
 ---
 
-## Dataset / Input
-
-This project does not use a traditional dataset. Instead, it processes **live webcam video input**.
-
-The webcam feed is analyzed frame-by-frame to detect hand landmarks and interpret gestures in real time.
-
----
-
 ## Technologies Used
+
+This project is built using the following technologies:
 
 * **Python**
 * **OpenCV**
@@ -61,9 +55,7 @@ These libraries enable real-time image processing, hand landmark detection, and 
 
 ### Hand Detection
 
-The application uses **MediaPipe Hands** to detect and track 21 hand landmarks.
-
-These landmarks provide information about finger positions which are used to determine gestures.
+The application uses **MediaPipe Hands** to detect and track 21 hand landmarks. These landmarks provide information about finger positions, which are used to determine gestures.
 
 ### Gesture Recognition
 
@@ -74,47 +66,30 @@ Finger positions are compared to determine whether they are raised or folded.
 
 ### Drawing Mechanism
 
-When drawing mode is active, the program tracks the position of the **index fingertip** and connects consecutive points with lines to create smooth strokes.
+When drawing mode is active, the program tracks the position of the **index fingertip** and connects consecutive points with lines to create smooth drawing strokes.
 
 ### Canvas Overlay
 
-The drawing canvas is stored separately and merged with the webcam frame using OpenCV bitwise operations.
-
----
-
-## Installation
-
-### Clone the Repository
-
-```
-git clone https://github.com/yourusername/air-canvas.git
-cd air-canvas
-```
-
-### Install Dependencies
-
-```
-pip install opencv-python mediapipe numpy
-```
+The drawing canvas is stored separately and merged with the webcam frame using OpenCV image processing operations. This allows the drawing to appear on top of the live camera feed.
 
 ---
 
 ## Usage
 
-Run the main Python file:
+Run the Python script to start the application:
 
 ```
 python air_canvas.py
 ```
 
-The webcam will open and the program will start detecting hand gestures.
+Once the webcam opens, the program will begin detecting hand gestures.
 
 ---
 
 ## Project Structure
 
 ```
-AirCanvas
+aircanvas
 │
 ├── air_canvas.py
 ├── README.md
@@ -125,22 +100,11 @@ AirCanvas
 
 ## Future Improvements
 
-Possible improvements include:
+Possible improvements for this project include:
 
 * Adjustable brush sizes
 * Shape drawing tools
 * Save drawings as images
-* Multi-hand support
+* Multi-hand gesture support
 * Gesture-based UI controls
 
----
-
-## Author
-
-**Anjali Devu**
-
-B.Tech Student interested in:
-
-* Machine Learning
-* Computer Vision
-* Blockchain Development
