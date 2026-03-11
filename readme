@@ -1,0 +1,203 @@
+# Air Canvas
+
+### Draw in the Air Using Hand Gestures with Computer Vision
+
+Air Canvas is a **real-time computer vision application** that allows users to draw on a virtual canvas using **hand gestures captured through a webcam**. Instead of using a mouse or stylus, the system tracks hand movements and interprets finger positions to perform drawing operations.
+
+This project demonstrates how **hand gesture recognition, real-time image processing, and human-computer interaction (HCI)** can be implemented using Python.
+
+---
+
+# Project Overview
+
+Air Canvas uses **MediaPipe’s hand tracking model** to detect hand landmarks and identify finger positions. Based on the detected gestures, the system switches between different modes such as **drawing, selecting colors, and erasing**.
+
+The application overlays a virtual drawing canvas on the live webcam feed, allowing users to interact with it naturally.
+
+---
+
+# Features
+
+* Real-time **hand gesture recognition**
+* Virtual **air drawing using index finger**
+* **Color palette selection** using gestures
+* **Eraser tool** for removing drawings
+* **Canvas clearing** functionality
+* Live webcam feed with **drawing overlay**
+
+---
+
+# Demo
+
+*(Add screenshots or GIF here to improve repository visibility)*
+
+Example usage workflow:
+
+1. Raise **index + middle finger** to activate color selection mode.
+2. Move your finger over the palette to choose a color.
+3. Raise **only the index finger** to start drawing.
+4. Select **eraser** to remove drawings.
+5. Press **C** to clear the canvas.
+6. Press **Q** to exit the application.
+
+---
+
+# How It Works
+
+## 1. Webcam Capture
+
+The application captures video frames from the webcam using OpenCV.
+
+The frames are flipped horizontally to simulate a mirror-like interaction.
+
+---
+
+## 2. Hand Landmark Detection
+
+MediaPipe detects **21 hand landmarks**, including fingertips, joints, and palm positions.
+
+These landmarks allow the system to determine whether a finger is **raised or folded**.
+
+---
+
+## 3. Gesture Recognition
+
+Finger positions are compared using landmark coordinates.
+
+### Gesture Logic
+
+| Gesture                  | Action               |
+| ------------------------ | -------------------- |
+| Index finger up          | Drawing mode         |
+| Index + middle finger up | Color selection mode |
+
+---
+
+## 4. Drawing Mechanism
+
+When drawing mode is active:
+
+* The system tracks the **index fingertip position**
+* Lines are drawn between consecutive fingertip positions
+
+This creates smooth drawing strokes on the virtual canvas.
+
+---
+
+## 5. Canvas Overlay
+
+The drawing canvas is maintained as a separate image and merged with the webcam frame using OpenCV image operations.
+
+This allows the drawing to appear **on top of the live camera feed**.
+
+---
+
+# Technologies Used
+
+| Technology | Purpose                             |
+| ---------- | ----------------------------------- |
+| Python     | Core programming language           |
+| OpenCV     | Video processing and webcam capture |
+| MediaPipe  | Real-time hand tracking             |
+| NumPy      | Image and array operations          |
+
+---
+
+# ⚙️ Installation
+
+### 1. Clone the Repository
+
+```
+git clone https://github.com/yourusername/air-canvas.git
+cd air-canvas
+```
+
+### 2. Install Dependencies
+
+```
+pip install opencv-python mediapipe numpy
+```
+
+Or install using a requirements file:
+
+```
+pip install -r requirements.txt
+```
+
+---
+
+# ▶️ Usage
+
+Run the main Python file:
+
+```
+python air_canvas.py
+```
+
+The webcam will open and the application will begin detecting hand gestures.
+
+---
+
+# 🎮 Controls
+
+| Input                 | Action       |
+| --------------------- | ------------ |
+| Index Finger          | Draw         |
+| Index + Middle Finger | Select Color |
+| C                     | Clear Canvas |
+| Q                     | Quit Program |
+
+---
+
+# 📂 Project Structure
+
+```
+AirCanvas
+│
+├── air_canvas.py
+├── requirements.txt
+├── README.md
+│
+└── demo
+    ├── demo.gif
+    └── screenshot.png
+```
+
+---
+
+# 🚀 Future Improvements
+
+Possible improvements for this project include:
+
+* Adjustable brush sizes
+* Shape drawing tools
+* Multi-hand gesture support
+* Save drawings as image files
+* GUI interface for tool selection
+* AI-based gesture recognition
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+If you want to improve this project:
+
+1. Fork the repository
+2. Create a new feature branch
+3. Commit your changes
+4. Submit a pull request
+
+---
+
+# 👩‍💻 Author
+
+**Anjali Devu**
+
+B.Tech Student
+Interested in **Machine Learning, Computer Vision, and Blockchain Development**
+
+---
+
+⭐ If you found this project helpful, consider starring the repository.
